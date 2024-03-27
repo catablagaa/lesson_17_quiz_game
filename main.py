@@ -3,6 +3,7 @@
 
 import users
 import game
+import time
 
 if __name__ == '__main__':
     welcome_msg = "Welcome to Quiz Game!"
@@ -13,3 +14,10 @@ if __name__ == '__main__':
     while True:
         print(f"Let's play {list(current_player.keys())[0]}")
         game.run_game(current_player)
+        time.sleep(2)
+        user_pick = input("Wanna play again? ")
+        if user_pick.lower() == "n":
+            break
+        else:
+            continue
+
