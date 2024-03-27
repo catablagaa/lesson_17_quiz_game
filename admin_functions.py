@@ -1,6 +1,7 @@
 import json
 
 import game
+from quiz_logger import logger
 
 MENU = """
 1. Add question
@@ -23,7 +24,7 @@ def add_question(all_questions: list, questions_path: str = "questions.json"):
 
     except Exception as e:
         print("Error adding your question")
-
+        logger.error(f"Error on adding new question {e}")
 
 def delete_question(all_questions: list, questions_path: str = "questions.json"):
     try:
@@ -39,6 +40,8 @@ def delete_question(all_questions: list, questions_path: str = "questions.json")
         print(f"questionn not found. Error on deleting: {e}")
     except Exception as e:
         print(f"Unknown Error on deleting: {e} ")
+
+
     else:
         print("Question deleted successfully! ")
 
